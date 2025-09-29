@@ -1,11 +1,20 @@
 #include <stdlib.h>
 #include <vector>
+#include <iostream>
+#include <list>
 using namespace std;
 
 int main() {
-	int a[10];
-	vector<int> b;
+	list<const char*> lst{ "Tokyo", "Kanda", "Akihabara", "Okatimachi", "Ueno", "Uguisudani", 
+	"Nippori", "Tabata", "Komagome", "Sugamo", "Otsuka", "Ikebukuro", "Mejiro",
+	"Takadanobaba", "Shin-Okubo", "Shinjuku", "Yoyogi", "Shibuya", "Ebisu", "Meguro", "Gotanda", 
+	"Osaki", "Shinagawa", "Tamachi", "Hamamatsucho", "Shimbashi", "Yurakucho"};
 
-	system("pause");
+	list<const char*>::iterator itr;
+	itr = lst.begin();
+	
+	for (auto itr = lst.begin(); itr != lst.end(); ++itr) {
+		cout << *itr << endl;
+	}
 	return 0;
 }
