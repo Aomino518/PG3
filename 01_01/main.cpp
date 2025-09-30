@@ -3,48 +3,50 @@
 #include <list>
 using namespace std;
 
+/// <summary>
+/// リストを表示する関数
+/// </summary>
+/// <param name="year">年</param>
+/// <param name="lst">リスト</param>
+void PrintList(const char* year, list<const char*> lst) {
+	int index = 1;
+
+	cout << year << endl;
+	for (auto itr = lst.begin(); itr != lst.end(); ++itr) {
+		cout << "JY" << index << ":" << *itr << endl;
+		index++;
+	}
+	cout << "\n";
+}
+
+/// <summary>
+/// リストに挿入する関数
+/// </summary>
+/// <param name="lst">リスト</param>
+/// <param name="insertTarget">挿入先</param>
+/// <param name="insertText">挿入名</param>
+void Insert(list<const char*>& lst, const char* insertTarget, const char* insertText) {
+	for (auto itr = lst.begin(); itr != lst.end(); ++itr) {
+		if (*itr == insertTarget) {
+			itr = lst.insert(itr, insertText);
+			++itr;
+		}
+	}
+}
+
 int main() {
 	list<const char*> lst{ "Tokyo", "Kanda", "Akihabara", "Okatimachi", "Ueno", "Uguisudani", 
 	"Nippori", "Tabata", "Komagome", "Sugamo", "Otsuka", "Ikebukuro", "Mejiro",
 	"Takadanobaba", "Shin-Okubo", "Shinjuku", "Yoyogi", "Shibuya", "Ebisu", "Meguro", "Gotanda", 
 	"Osaki", "Shinagawa", "Tamachi", "Hamamatsucho", "Shimbashi", "Yurakucho"};
 
-	int index = 1;
+	PrintList("1970年", lst);
+	Insert(lst, "Tabata", "Nishi-Nippori");
 
-	cout << "1970年" << endl;
-	for (auto itr = lst.begin(); itr != lst.end(); ++itr) {
-		cout << "JY" << index << ":" << *itr << endl;
-		index++;
-	}
-	index = 1;
+	PrintList("2019年", lst);
+	Insert(lst, "Tamachi", "Takanawa Gateway");
 
-	for (auto itr = lst.begin(); itr != lst.end(); ++itr) {
-		if (*itr == "Tabata") {
-			itr = lst.insert(itr, "Nishi-Nippori");
-			++itr;
-		}
-	}
-
-	cout << "\n2019年" << endl;
-	for (auto itr = lst.begin(); itr != lst.end(); ++itr) {
-		cout << "JY" << index << ":" << *itr << endl;
-		index++;
-	}
-	index = 1;
-
-	for (auto itr = lst.begin(); itr != lst.end(); ++itr) {
-		if (*itr == "Tamachi") {
-			itr = lst.insert(itr, "Takanawa Gateway");
-			++itr;
-		}
-	}
-
-	cout << "\n2022年" << endl;
-	for (auto itr = lst.begin(); itr != lst.end(); ++itr) {
-		cout << "JY" << index << ":" << *itr << endl;
-		index++;
-	}
-	index = 1;
+	PrintList("2022年", lst);
 
 	return 0;
 }
