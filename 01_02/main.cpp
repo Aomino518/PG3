@@ -1,22 +1,64 @@
-#include <stdlib.h>
 #include <iostream>
+#include <fstream>
+#include <sstream>
+#include <algorithm>
 #include <vector>
+#include <cctype>
 using namespace std;
 
-template <typename T1, typename T2, typename T3>
-T1 Min(T1 a, T2 b, T3 c) {
-	if (a < b && a < c) {
-		return static_cast<T1>(a);
-	}
+/// <summary>
+/// 文字列中の数字だけを取り出してintに変換する関数
+/// </summary>
+/// <param name="s">文字列</param>
+/// <returns>数字</returns>
+int ExtractNumber(const string& s) {
+    string num;
+    int result = 0;
 
-	if (b < a && b < c) {
-		return static_cast<T1>(b);
-	}
+    // 文字か数字かチェック
+    for (char c : s) {
+        if (isdigit(c)) {
+            num += c;
+        }
+    }
 
-	return static_cast<T1>(c);
+    // 数字がなければ0そうでなければintに変換
+    if (num.empty()) {
+        return result;
+    } else {
+        result = stoi(num);
+    }
+
+    return result;
 }
 
 int main() {
-	printf("%d\n", Min<int, float, double>(6, 5.0f, 7.29452l));
-	return 0;
+    vector<string> studentNumber;
+    ifstream file("PG3_2025_01_02.txt");
+    string line;
+
+    // ファイルオープン
+    if (file.is_open()) {
+        while (getline(file, line, ',')) {
+            if (!line.empty()) {
+                studentNumber.push_back(line);
+            }
+        }
+        file.close();
+    } else {
+        cout << "ファイルを開けませんでした" << endl;
+        return 1;
+    }
+
+    // ソートで学籍番号順に入れ替え
+    sort(studentNumber.begin(), studentNumber.end(), [](const string& a, const string& b) {
+        return ExtractNumber(a) < ExtractNumber(b);
+        });
+
+    // 学籍番号を表示
+    for (const string& s : studentNumber) {
+        cout << s << endl;
+    }
+
+    return 0;
 }
