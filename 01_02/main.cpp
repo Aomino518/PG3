@@ -4,7 +4,6 @@
 #include <algorithm>
 #include <vector>
 #include <cctype>
-
 using namespace std;
 
 /// <summary>
