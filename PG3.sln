@@ -6,6 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ソリューション項目", "ソリューション項目", "{2022CB0F-8BAF-F49E-0C48-8EF4C96EC109}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		PG3\PG3.vcxproj = PG3\PG3.vcxproj
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "01_01", "01_01\01_01.vcxproj", "{226F8E4F-9381-449B-AEF9-7C9F1A059EAD}"
@@ -15,6 +16,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02_01", "02_01\02_01.vcxproj", "{35061C54-D2CB-4D95-9883-57E2BA949055}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02_02", "02_02\02_02.vcxproj", "{40314B59-3425-435B-84CE-8A58823916CC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "02_03", "PG3\PG3.vcxproj", "{89FFD58A-9465-4F66-9F24-889772B963A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +59,14 @@ Global
 		{40314B59-3425-435B-84CE-8A58823916CC}.Release|x64.Build.0 = Release|x64
 		{40314B59-3425-435B-84CE-8A58823916CC}.Release|x86.ActiveCfg = Release|Win32
 		{40314B59-3425-435B-84CE-8A58823916CC}.Release|x86.Build.0 = Release|Win32
+		{89FFD58A-9465-4F66-9F24-889772B963A5}.Debug|x64.ActiveCfg = Debug|x64
+		{89FFD58A-9465-4F66-9F24-889772B963A5}.Debug|x64.Build.0 = Debug|x64
+		{89FFD58A-9465-4F66-9F24-889772B963A5}.Debug|x86.ActiveCfg = Debug|Win32
+		{89FFD58A-9465-4F66-9F24-889772B963A5}.Debug|x86.Build.0 = Debug|Win32
+		{89FFD58A-9465-4F66-9F24-889772B963A5}.Release|x64.ActiveCfg = Release|x64
+		{89FFD58A-9465-4F66-9F24-889772B963A5}.Release|x64.Build.0 = Release|x64
+		{89FFD58A-9465-4F66-9F24-889772B963A5}.Release|x86.ActiveCfg = Release|Win32
+		{89FFD58A-9465-4F66-9F24-889772B963A5}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
