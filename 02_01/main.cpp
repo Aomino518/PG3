@@ -4,20 +4,14 @@
 
 using namespace std;
 
-template <typename T1, typename T2, typename T3>
-T1 Min(T1 a, T2 b, T3 c) {
-	if (a < b && a < c) {
-		return static_cast<T1>(a);
-	}
-
-	if (b < a && b < c) {
-		return static_cast<T1>(b);
-	}
-
-	return static_cast<T1>(c);
+template <typename T>
+T Min(T a, T b) {
+	return (a < b) ? a : b;
 }
 
 int main() {
-	printf("%d\n", Min<int, float, double>(6, 5.0f, 7.29452l));
+	cout << Min(6, 5) << endl;
+	cout << Min(5.0f, 7.2f) << endl;
+	cout << Min(7.29, 3.14) << endl;
 	return 0;
 }
