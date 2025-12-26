@@ -1,6 +1,4 @@
-#include <stdlib.h>
 #include <iostream>
-#include <vector>
 
 using namespace std;
 
@@ -10,8 +8,8 @@ T Min(T a, T b) {
 }
 
 int main() {
-	cout << Min(6, 5) << endl;
-	cout << Min(5.0f, 7.2f) << endl;
-	cout << Min(7.29, 3.14) << endl;
+	cout << Min<int>(6, 5) << endl;
+	cout << Min<float>(4.3f, 7.2f) << endl;
+	cout << Min<double>(7.294, 4.284) << endl;
 	return 0;
 }
