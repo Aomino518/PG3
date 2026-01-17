@@ -10,6 +10,10 @@ std::vector<std::vector<int>> mapData;
 std::mutex mtx;
 bool loaded = false;
 
+/// <summary>
+/// CSVロード関数
+/// </summary>
+/// <param name="filename">ファイルパス</param>
 void LoadCSV(const char* filename) {
     std::ifstream file(filename);
     std::string line;
