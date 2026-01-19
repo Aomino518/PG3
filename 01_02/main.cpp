@@ -51,9 +51,7 @@ int main() {
     }
 
     // ソートで学籍番号順に入れ替え
-    sort(studentNumber.begin(), studentNumber.end(), [](const string& a, const string& b) {
-        return ExtractNumber(a) < ExtractNumber(b);
-        });
+    sort(studentNumber.begin(), studentNumber.end());
 
     // 学籍番号を表示
     for (const string& s : studentNumber) {
